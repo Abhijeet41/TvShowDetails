@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="tvShow"
+            type="com.abhi41.tvshowappmvvm.model.TvShows" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_4sdp">
+
+        <View
+            android:id="@+id/viewSupport"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_10sdp"
+            app:layout_constraintTop_toBottomOf="@+id/img_tvshow" />
+
+
+        <View
+            android:id="@+id/viewBackground"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_tvshow"
+            android:paddingBottom="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/img_tvshow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txtName"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/img_tvshow"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:imageURL="@{tvShow.image_thumbnail_path}"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:riv_corner_radius="@dimen/_4sdp" />
+
+        <TextView
+            android:id="@+id/txtName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:paddingTop="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="@{tvShow.name}"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/img_tvshow"
+            app:layout_constraintTop_toTopOf="@+id/img_tvshow" />
+
+        <TextView
+            android:id="@+id/txtNetwork"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{tvShow.network}"
+            android:includeFontPadding="false"
+            android:textColor="@color/colorTextOther"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="@+id/txtName"
+            app:layout_constraintStart_toStartOf="@+id/txtName"
+            app:layout_constraintBottom_toBottomOf="@+id/txtName"
+            android:fontFamily="@font/ubuntu_regular"
+            android:layout_marginTop="@dimen/_3sdp" />
+
+
+        <TextView
+            android:id="@+id/txtStarted"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text='@{"Started on: "+tvShow.start_date}'
+            android:includeFontPadding="false"
+            android:textColor="@color/colorTextSecondary"
+            android:textSize="@dimen/_12ssp"
+            android:fontFamily="@font/ubuntu_regular"
+            app:layout_constraintEnd_toEndOf="@+id/txtName"
+            app:layout_constraintStart_toStartOf="@+id/txtName"
+            app:layout_constraintTop_toBottomOf="@+id/txtNetwork"
+            android:layout_marginTop="@dimen/_3sdp" />
+
+
+        <TextView
+            android:id="@+id/textStatus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{tvShow.status}"
+            app:layout_constraintEnd_toEndOf="@+id/txtName"
+            app:layout_constraintStart_toStartOf="@+id/txtName"
+            app:layout_constraintTop_toBottomOf="@+id/txtStarted"
+            android:includeFontPadding="false"
+            android:textColor="@color/holo_green_light"
+            android:textSize="@dimen/_12ssp"
+            android:fontFamily="@font/ubuntu_regular" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
