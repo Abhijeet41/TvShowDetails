@@ -28,11 +28,11 @@
         <variable
             name="startedDate"
             type="String" />
-        
+
         <variable
             name="description"
             type="String" />
-        
+
         <variable
             name="rating"
             type="String" />
@@ -320,7 +320,6 @@
                     android:id="@+id/buttonWebsite"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:visibility="gone"
                     android:layout_margin="@dimen/_8sdp"
                     android:layout_marginStart="@dimen/_4sdp"
                     android:layout_marginTop="@dimen/_8sdp"
@@ -329,9 +328,10 @@
                     android:includeFontPadding="false"
                     android:text="@string/website"
                     android:textSize="@dimen/_12ssp"
+                    android:visibility="gone"
                     app:cornerRadius="@dimen/_6sdp"
-                    app:layout_constraintEnd_toStartOf="@+id/buttonEpisode"
                     app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/buttonEpisode"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/viewDivider2" />
 
@@ -339,7 +339,6 @@
                     android:id="@+id/buttonEpisode"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:visibility="gone"
                     android:layout_margin="@dimen/_8sdp"
                     android:layout_marginStart="@dimen/_4sdp"
                     android:layout_marginTop="@dimen/_8sdp"
@@ -347,8 +346,9 @@
                     android:fontFamily="@font/ubuntu_medium"
                     android:includeFontPadding="false"
                     android:text="@string/episodes"
+                    android:textColor="@color/colorTextOther"
                     android:textSize="@dimen/_12ssp"
-                    android:textColor="@color/black"
+                    android:visibility="gone"
                     app:cornerRadius="@dimen/_6sdp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -367,6 +367,22 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageWatchlist"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:background="@drawable/background_fab"
+            android:contentDescription="@string/app_name"
+            android:padding="@dimen/_8sdp"
+            android:src="@drawable/ic_watchlist"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="@color/colorTextIcon" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

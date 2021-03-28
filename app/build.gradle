@@ -12,7 +12,6 @@ android {
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
-        ndk.abiFilters 'armeabi-v7a','arm64-v8a','x86','x86_64'
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -44,7 +43,8 @@ def retrofitVersion = "2.3.0";
 def rxJavaVersion = "2.1.1";
 def httpLoggingInterceptor = "4.5.0";
 def navigation = "2.2.2";
-def roomDb = "1.1.1";
+def roomDb = "2.2.5";
+def roomDbRx = "2.1.0";
 def dagger = "2.17"
 def firebase_auth = "17.0.0"
 def firebase_messaging = "20.2.1"
@@ -84,8 +84,9 @@ dependencies {
     implementation "androidx.navigation:navigation-ui:$navigation"
 
     // Room Database
-    implementation "android.arch.persistence.room:runtime:$roomDb"
-    annotationProcessor "android.arch.persistence.room:compiler:$roomDb"
+    implementation 'androidx.room:room-runtime:2.1.0'
+    annotationProcessor  'androidx.room:room-compiler:2.1.0'
+    implementation 'androidx.room:room-rxjava2:2.1.0'
 
     // Dagger
     api "com.google.dagger:dagger:$dagger"
@@ -111,9 +112,15 @@ dependencies {
     implementation 'com.makeramen:roundedimageview:2.3.0'
 
     implementation 'com.squareup.picasso:picasso:2.71828'
+
     testImplementation 'junit:junit:4.+'
+    testImplementation 'androidx.arch.core:core-testing:2.0.0'
+    testImplementation 'org.mockito:mockito-inline:2.11.0'
+
+
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    androidTestImplementation "androidx.arch.core:core-testing:2.1.0"
 
 
 

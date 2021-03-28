@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.abhi41.tvshowappmvvm.R;
 import com.abhi41.tvshowappmvvm.adapter.TVShowsAdapter;
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements TVShowsListener {
     private TVShowsAdapter tvShowsAdapter;
     private int currentPage = 1;
     private int totalAvailablePages = 1;
-    ActionBar actionBar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +64,21 @@ public class MainActivity extends AppCompatActivity implements TVShowsListener {
                 }
             }
         });
+        activityMainBinding.imgWatchlist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),Watchlistactivity.class));
+            }
+        });
+
+        activityMainBinding.imgSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),SearchActivity.class));
+            }
+        });
+        
+
         getMostPopularTVShows();
     }
 
@@ -108,12 +124,16 @@ public class MainActivity extends AppCompatActivity implements TVShowsListener {
     @Override
     public void onTvShowClicked(TvShows tvShows) {
             Intent intent = new Intent(getApplicationContext(),TVShowDetailsActivity.class);
-            intent.putExtra("id",tvShows.getId());
+
+            intent.putExtra("tvShow",tvShows);
+
+            /*intent.putExtra("id",tvShows.getId());
             intent.putExtra("name",tvShows.getName());
             intent.putExtra("startDate",tvShows.getStart_date());
             intent.putExtra("country",tvShows.getCountry());
             intent.putExtra("network",tvShows.getNetwork());
-            intent.putExtra("status",tvShows.getStatus());
+            intent.putExtra("status",tvShows.getStatus());*/
+
             startActivity(intent);
     }
 }

@@ -1,7 +1,25 @@
 package com.abhi41.tvshowappmvvm.model;
 
-public class TvShows {
-    String id,name,permalink,start_date,country,network,status,image_thumbnail_path;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+import org.jetbrains.annotations.NotNull;
+
+import java.io.Serializable;
+
+@Entity(tableName = "tvShows")
+public class TvShows implements Serializable {
+
+    @PrimaryKey
+    @NotNull
+    String id;
+    String name;
+    String permalink;
+    String start_date;
+    String country;
+    String network;
+    String status;
+    String image_thumbnail_path;
 
     public String getId() {
         return id;
@@ -66,4 +84,5 @@ public class TvShows {
     public void setImage_thumbnail_path(String image_thumbnail_path) {
         this.image_thumbnail_path = image_thumbnail_path;
     }
+
 }

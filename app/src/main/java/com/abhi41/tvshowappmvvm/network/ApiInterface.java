@@ -18,5 +18,8 @@ public interface ApiInterface {
     @GET("show-details")
     Observable<TVShowDetailsResponse>getTVShowDetailsResponse(@Query("q") String tvShowId);
 
+    @GET("search")
+    Observable<TvShowsResponse> searchTVShow(@Query("q")String query,@Query("page") int page);
+
 
 }

@@ -14,16 +14,15 @@
         android:theme="@style/Theme.TVShowAppMVVM"
         android:usesCleartextTraffic="true"
         tools:replace="android:icon">
-        <activity android:name=".activity.HackeThon">
+        <activity android:name=".activity.Watchlistactivity"></activity>
+        <activity android:name=".activity.SearchActivity" />
+        <activity android:name=".activity.TVShowDetailsActivity" />
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".activity.TVShowDetailsActivity" />
-        <activity android:name=".activity.MainActivity">
-
         </activity>
     </application>
 

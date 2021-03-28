@@ -7,4 +7,6 @@
     <string name="na">N/A</string>
     <string name="website">website</string>
     <string name="episodes">Episodes</string>
+    <string name="search_tv_show">Search TV Show</string>
+    <string name="wathchlist">Wathchlist</string>
 </resources>
